@@ -1,4 +1,4 @@
-#Set up
+# Set up
 1. Open terminal
 2. Go to the desired directory e.g. Desktop (cd Desktop)
 3. This is a one time step:
@@ -9,7 +9,7 @@
     * git checkout -b “nikola’s_branch” (create a new working branch)
     * git branch (will show to branches, the one with the star (*) is the working branch)
 
-#Everyday project update
+# Everyday project update
 1. cd Desktop/kepler-exoplanet-search-results 
 2. git checkout nikola’s_branch (will switch to this branch)
 3. git branch (to confirm the working branch)
