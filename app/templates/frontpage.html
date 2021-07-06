@@ -9,8 +9,11 @@
 	<body>
 		<section class="jumbotron text-center">
         	<div class="container" >
-          		<h1 class="jumbotron-heading">Are we the only Earth in this Universe?</h1>
+          		<h1 class="jumbotron-heading">THE QUEST TO FIND ANOTHER EARTH</h1>
         	</div>
+        	<p>
+          		By: Nikola Baci and Aaliyah John
+          		</p>
       	</section>
 
 
@@ -19,20 +22,36 @@
 			<div>
 				<br>
 				<p>
-					For centuries, this question has puzzled the mind of many humans who wonder if we are the only beings in this vast and dark Universe. Could there be civilized societies, or maybe another Earth-like planet that fosters living creatures.
-					In 1969, the American astronaut Neil Armstrong stated "That's one small step for man, one giant leap for mankind", when he famously step foot on the Moon. Since then, the space industry has evolved tremendously, especially with the rise of private companies and collaborations with government funded agencies like NASA.
+					Are we the only beings in this enourmous universe? Are there other civilized societies? Could there be another Earth-like planet that fosters living creatures? For centuries these questions have pazzeled the minds of the most brilliant scientist and researchers. Finally, a decade ago, NASA lunched the 
+					<a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/mission_pages/kepler/overview/index.html">Kepler</a> telescop on a mission to search for 
+					<a target="_blank" rel="noopener noreferrer" href="https://exoplanets.nasa.gov/what-is-an-exoplanet/overview/">exoplanets</a> in star-systems besides our own, and possibly find habitable planets.
 				</p>
 				<br>
 			</div>
 		</div>
 
-		
+				<br>
+
 		<div class="container">
 			<img src="{{url_for('static', filename='space-pics/sunset.jpg')}}" width=100% height=100% >
 			<br>
 			<br>
+		</div>
+		
+		<section class="text-center">
+        	<div class="container" >
+          		<h2>About the project</h2>
+        	</div>
+      	</section>
+      	<div class="container">
 			<p>
-				Our project is based on Kepler exoplanet search results. NASA built a satellite known as the Kepler Space Observatory and launched it in 2009. The telescope is dedicated to searching for exoplanets in star systems besides our own, and possibly finding other habitable planets. As of May 7th 2021 there are over 4383 confirmed exoplanets in total. The telescope is still active and continues to collect new data on its extended mission. Our dataset, that we found on kaggle, is a cumulative record of all observed Kepler "objects of interest" (referred to throughout the project as koi or kepoi)- all of the approximately 10,000 exoplanet candidates Kepler has taken observations on.
+				
+
+				NASA has collected information of over 10,000 space objects since 2009 when the Kepler telescop was launched. These objects, also known as Kepler Object of Interest (KOI), are studied and investigated by performing a number of tests to determine if they are planets or not. As of May 7th, 2021 there are over 4383 confirmed exoplanets. 
+			</p>
+			<p>
+				On this project, we are using a dataset taken from 
+				<a target="_blank" rel="noopener noreferrer" href="https://www.kaggle.com/nasa/kepler-exoplanet-search-results">Kaggel</a> that was last updated on 2017. KOI's in this dataset are labled as CONFIRMED (passed all the tests, it's a planet), FALSE POSITIVES (did not pass all the tests, it's not a planet), or CANDIDATES (under investigation). Our goal is to train a machine learning model on first two KOIs and use this model to predict the outcome of CANDIDATE KOIs.
 			</p>
 			<br>
 		</div>
@@ -47,16 +66,16 @@
 		<div class="container">
 			<br>
 			<p>
-				We created two Decision Tree models for this project. We used the first tree to determine how accurate the model is when trained with our data. Scores obtained by the first model were in the high 90th percentile, so we then decided to train the model in the whole dataset. Before we feed the data to the Decision Tree algorithm, we used a method called SMOTE that stands for Synthetic Minority Oversampling Technique. This technique is used to handle unbalanced data between two classes, in our case, we had twice as many False Positive data than Confirmed cases. With SOMTE we reached an equilibrated dataset with a 1:1 ratio.
+				We used Decision Trees to train out model and make prediction. To find the best performing decision tree, we applied an algorithm (GridSearchCV) that combined different values for the parameters, and returned the decision tree with optimal parameters.
 			</p>
-
-			<br>
-
 			<p>
-				When constructing our decision trees, we utilized the Grid Search method. This algorithm scanned the dataset to customize optimal parameters for this model. Grid Search builds a model on each parameter combination possible and iterates through every parameter combination and before storing a model for each combination. Before implementing the Grid Search algorithm we had an accuracy score of 83.7% compared to 98.9% post implementation.
+				Our dataset is imbalanced with twice as many False Positives as Confirmed cases. Hence, before we feed the data to the Decision Tree, we used a method called SMOTE (Synthetic Minority Oversampling Technique). With SOMTE we reached an equilibrated dataset with a 1:1 ratio.
+			</p>
+			<p>
+			For more information check out the <a target="_blank" rel="noopener noreferrer" href="https://github.com/nikolabaci98/kepler-exoplanet-search-results">jupyter notebook</a>.
 			</p>
 			<br>
-			<img src="{{url_for('static', filename='space-pics/tree.png')}}" width=100% height=100% >
+			<img src="{{url_for('static', filename='space-pics/tree.jpg')}}" width=100% height=100% >
 		
 		</div>
 		
@@ -73,12 +92,14 @@
 		<div class="container">
 			<br>
 			<p>
-			  Following the training of our best model, we make the prediction on NASA's 2114 unlabeled data or the CANDIDATE KOIs. Then we compare our predictions with the latest NASA database. It results that more than 100 KOIs are labeled correctly by our model, we have some wrong labels and the rest is still the future’s mystery. We are excited to see how our predictions align with the final results of the Kepler’s observation and calculation.
+			  Following the training of our best model, we make the prediction on 2114 CANDIDATE KOIs. Then we compare our predictions with the latest updated NASA database. We correclty predicted the future 115 tims KOIs. We are excited to see how our predictions align with the final results of the Kepler’s observation and calculation. Below are some 
+			  <a target="_blank" rel="noopener noreferrer" href="https://exoplanets.nasa.gov/discovery/exoplanet-catalog/">hypothetical vizualizations</a> created by NASA of some of the planets that we correctly predicted.
 		   </p>
 		   <br>
 		</div>
 
 		<div class="album py-5 bg-light">
+
 		    <div class="container">
 		    	<div class="row">
 		    		<div class="col-md-6">
@@ -122,6 +143,10 @@
 
 			</div>
 		</div>
+
+		<p>
+		Acknowledgement: all pictures are taken from NASA's website.
+		</p>
 	</body>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
