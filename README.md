@@ -15,7 +15,7 @@ The goal of this project is to train a machine learning model on the labeled dat
 ## Results
 After we obtain the predictions from our Decision Tree model, we compare the answers with the latest updated database from NASA in `final-data.csv`. We sucessfully predicted the future 115 times. For more information of the procedure we followed you can check out the [jupyter notebook](https://github.com/nikolabaci98/kepler-exoplanet-search-results/blob/main/koi_future_prediction_dt_model.ipynb) and our [flusk app](https://exoplanet-exploration.herokuapp.com/).
  
-
+Please feel free to give your feedback about our work.
 
 
 
